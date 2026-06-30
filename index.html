@@ -1,14 +1,393 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>step-q.org</title>
+    <meta
+      name="description"
+      content="STEP-Q ergaenzt STEP-basierte CAD-Daten um strukturierte RFQ-Metadaten fuer Anfrage, Kalkulation, Arbeitsvorbereitung und Fertigung."
+    />
+    <title>STEP-Q | RFQ-Metadaten fuer STEP-basierte Fertigungsanfragen</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="theme-console.css" />
   </head>
   <body>
-    <h1>step-q.org</h1>
-    <p>Welcome to step-q, a simple informational website.</p>
-    <img src="STEP-Q.png" alt="STEP-Q.png">
-    <p>more is coming soon...</p>
+    <header class="site-header">
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="#top" aria-label="STEP-Q Startseite">
+          <span class="brand-mark">Q</span>
+          <span>STEP-Q</span>
+        </a>
+        <div class="nav-links">
+          <a href="#prinzip">Prinzip</a>
+          <a href="#partner">Partner</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://github.com/holydraft/step-q">Spezifikation</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Automatisierbarer RFQ-Kontext fuer STEP-Dateien</p>
+            <h1 id="hero-title">CAD-Daten, die Kalkulation und Einkauf direkt weiterbringen.</h1>
+            <p class="lead">
+              Warum werden Fertigungsdaten noch abgetippt, wenn sie mit der STEP-Datei reisen koennen?
+              STEP-Q strukturiert Material, Menge, Prozessannahmen und weitere RFQ-Metadaten so, dass Menschen
+              und Systeme dieselben Anfragegrundlagen verstehen.
+            </p>
+            <div class="actions" aria-label="Hauptaktionen">
+              <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Pilotprojekt">Pilotprojekt starten</a>
+              <a class="button" href="https://github.com/holydraft/step-q">STEP-Q Spezifikation ansehen</a>
+              <a class="button" href="#exporter">Importer/Exporter anfragen</a>
+            </div>
+          </div>
+          <figure class="hero-visual">
+            <img
+              src="STEP-Q.png"
+              alt="Technische Darstellung eines STEP-Bauteils mit integrierten STEP-Q-Informationen"
+            />
+          </figure>
+        </div>
+        <div class="wrap trust-strip" aria-label="STEP-Q Vertrauenssignale">
+          <div>
+            <strong>Public GitHub Draft</strong>
+            <span>Offen dokumentiert und pruefbar.</span>
+          </div>
+          <div>
+            <strong>Carrier-agnostisch</strong>
+            <span>Gedacht fuer AP203, AP214, AP242 und Sidecar-Profile.</span>
+          </div>
+          <div>
+            <strong>holydraft Praxis</strong>
+            <span>Aus Schnittstellenarbeit zwischen CAD, Einkauf und Fertigung.</span>
+          </div>
+          <div>
+            <strong>Partnerlogos folgen</strong>
+            <span>Platz fuer Pilotpartner und kompatible Systeme.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="problem-title">
+        <div class="wrap">
+          <div class="section-header">
+            <p class="eyebrow">Warum STEP-Q?</p>
+            <h2 id="problem-title">Warum tippen wir Fertigungsdaten noch einmal ab?</h2>
+            <p>
+              In vielen industriellen Prozessen ist die STEP-Datei der zentrale Uebergabepunkt. Die Geometrie ist vorhanden,
+              aber entscheidende Zusatzinformationen liegen in Zeichnungen, PDFs, E-Mails, Excel-Listen, ERP-Systemen oder im
+              Erfahrungswissen einzelner Mitarbeiter.
+            </p>
+          </div>
+          <div class="grid-4">
+            <article class="card">
+              <h3>Manuelle Uebertragung</h3>
+              <p>Anfrage- und Angebotsprozesse bleiben schwer automatisierbar, obwohl viele Informationen bereits existieren.</p>
+            </article>
+            <article class="card">
+              <h3>Rueckfragen</h3>
+              <p>Konstruktion, Einkauf, Fertigung und externe Partner klaeren Details erneut, statt Daten direkt zu nutzen.</p>
+            </article>
+            <article class="card">
+              <h3>Medienbrueche</h3>
+              <p>CAD, Kalkulation, Plattformformulare und Fertigungssysteme arbeiten mit getrennten Datenlogiken.</p>
+            </article>
+            <article class="card">
+              <h3>Unklare Grundlage</h3>
+              <p>Technische Merkmale werden unterschiedlich interpretiert und Angebotsannahmen bleiben schwer nachvollziehbar.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="prinzip" aria-labelledby="principle-title">
+        <div class="wrap">
+          <div class="statement">
+            <div>
+              <p class="eyebrow">Positionierung</p>
+              <h2 id="principle-title">STEP-Q ersetzt STEP nicht. STEP-Q macht Anfragekontext maschinenlesbar.</h2>
+            </div>
+            <div>
+              <p>
+                STEP ist ein etablierter Standard fuer CAD-Geometrie und produktbezogene Daten. STEP-Q ergaenzt diesen Austausch
+                um eine kleine, dokumentierte RFQ-Metadatenschicht: Material, Fertigungsabsicht, Mengen, Oberflaechen,
+                Toleranzen, Pruefanforderungen und weitere Informationen, die fuer Kalkulation und technische Uebergabe relevant sind.
+              </p>
+              <p class="spaced-small">
+                Die Spezifikation ist carrier-agnostisch gedacht: AP203, AP214, AP242 oder Sidecar-basierte Prozesse koennen als
+                Traeger dienen. Die Geometrie bleibt beim jeweiligen STEP-Format; STEP-Q liefert einen klaren Zugriff auf die
+                angebotsrelevanten Metadaten.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="metadata-title">
+        <div class="wrap">
+          <div class="section-header">
+            <p class="eyebrow">Was wird strukturiert?</p>
+            <h2 id="metadata-title">Fertigungsrelevante Informationen direkt an der Uebergabe.</h2>
+            <p>
+              STEP-Q bildet Informationen ab, die heute haeufig manuell interpretiert oder aus Begleitdokumenten zusammengesucht
+              werden muessen.
+            </p>
+          </div>
+          <div class="grid-3">
+            <ul class="card list" aria-label="Technische STEP-Q-Felder">
+              <li>Material und Halbzeug</li>
+              <li>Fertigungsverfahren</li>
+              <li>Oberflaechen und Nachbehandlungen</li>
+              <li>Toleranzen und Qualitaetsanforderungen</li>
+            </ul>
+            <ul class="card list" aria-label="Anfragebezogene STEP-Q-Felder">
+              <li>Mengen und Losgroessen</li>
+              <li>Anfrage- und Angebotskontext</li>
+              <li>Bauteilfunktion und Fertigungsabsicht</li>
+              <li>Pruef- und Dokumentationsanforderungen</li>
+            </ul>
+            <article class="card">
+              <h3>Beispiel Gewinde</h3>
+              <p>
+                Eine Bohrung kann geometrisch sichtbar sein. Fuer Angebot und Fertigung ist aber relevant, welches Gewinde
+                vorgesehen ist, wie tief es sein soll, ob es funktional kritisch ist und welche Pruefung erwartet wird.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" aria-labelledby="workflow-title">
+        <div class="wrap">
+          <div class="section-header">
+            <p class="eyebrow">Wie es funktioniert</p>
+            <h2 id="workflow-title">Einmal strukturiert erfassen, danach besser uebergeben.</h2>
+          </div>
+          <div class="workflow">
+            <article class="workflow-step">
+              <span>01</span>
+              <h3>Daten erkennen</h3>
+              <p>CAD, PDM, ERP oder Plattformen stellen vorhandene Informationen wie Material, Menge oder Prozesskontext bereit.</p>
+            </article>
+            <article class="workflow-step">
+              <span>02</span>
+              <h3>Pruefen</h3>
+              <p>Anwender koennen Werte kontrollieren, fehlende Angaben ergaenzen und die Uebergabe bewusst freigeben.</p>
+            </article>
+            <article class="workflow-step">
+              <span>03</span>
+              <h3>Mitgeben</h3>
+              <p>STEP-Q-Metadaten reisen strukturiert mit der STEP-Datei oder ueber ein dokumentiertes Sidecar-Profil.</p>
+            </article>
+            <article class="workflow-step">
+              <span>04</span>
+              <h3>Weiterverarbeiten</h3>
+              <p>Importer, Portale und Kalkulationssysteme koennen Felder auslesen, vorbelegen und gezielt Rueckfragen erzeugen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="partner" aria-labelledby="partner-title">
+        <div class="wrap">
+          <div class="section-header">
+            <p class="eyebrow">Fuer wen?</p>
+            <h2 id="partner-title">Vier Rollen, ein besserer Uebergabepunkt.</h2>
+            <p>
+              STEP-Q soll genau dort helfen, wo CAD-Informationen in Anfrage, Angebot, Arbeitsvorbereitung oder Softwarelogik
+              erneut interpretiert werden. Entwicklungspartner helfen, diese Uebergaenge mit echten Daten belastbar zu machen.
+            </p>
+          </div>
+          <div class="grid-4 role-grid">
+            <article class="card">
+              <h3>Konstruktion & Engineering</h3>
+              <p>Fertigungsabsichten strukturiert mitgeben, statt sie spaeter in E-Mails, Zeichnungen oder Formularen zu verlieren.</p>
+            </article>
+            <article class="card">
+              <h3>Fertiger & Lohnfertiger</h3>
+              <p>Rueckfragen reduzieren, Angebotsannahmen nachvollziehbarer machen und relevante Felder schneller auswerten.</p>
+            </article>
+            <article class="card">
+              <h3>Plattformen & Portale</h3>
+              <p>Anfrageformulare automatisch vorbelegen und unvollstaendige Datensaetze gezielter sichtbar machen.</p>
+            </article>
+            <article class="card">
+              <h3>Softwareanbieter</h3>
+              <p>CAD-, CAM-, ERP- und PDM-Schnittstellen um einen klaren RFQ-Kontext fuer downstream Prozesse erweitern.</p>
+            </article>
+          </div>
+          <div class="partner-strip" aria-label="Partnerlogo Platzhalter">
+            <span>Pilotpartner</span>
+            <span>Kompatible Systeme</span>
+            <span>Referenzprozesse</span>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Entwicklungspartner">Entwicklungspartner werden</a>
+            <a class="button" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Technischer%20Austausch">Technischen Austausch anfragen</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="exporter" aria-labelledby="preview-title">
+        <div class="wrap preview">
+          <div>
+            <p class="eyebrow">Tooling Preview</p>
+            <h2 id="preview-title">Importer, Exporter und Demo-Workflows entstehen rund um die Spezifikation.</h2>
+            <p class="lead">
+              Fuer den ersten Website-Entwurf zeigen wir die Richtung: STEP-Datei auswaehlen, Metadaten pruefen,
+              STEP-Q-konform schreiben und in Zielsysteme uebergeben. Echte Upload-, Viewer- oder Verarbeitungsfunktionen
+              werden separat bereitgestellt.
+            </p>
+            <div class="tag-row" aria-label="Geplante und erste Systembeispiele">
+              <span class="tag">SolidWorks Exporter</span>
+              <span class="tag">OS</span>
+              <span class="tag">Messersoft</span>
+              <span class="tag">Kalkulationssysteme</span>
+              <span class="tag">Plattform-Importer</span>
+            </div>
+            <div class="actions">
+              <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Importer%20Exporter">Importer/Exporter anfragen</a>
+              <a class="button" href="#faq">Offene Fragen klaeren</a>
+            </div>
+          </div>
+          <div class="mockup" aria-label="Vorschau einer STEP-Q Metadatenmaske">
+            <div class="mockup-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="field-row"><span>Q_MATERIAL</span><strong>EN AW-6082</strong></div>
+            <div class="field-row"><span>Q_PRIMARY_PROCESS</span><strong>milling</strong></div>
+            <div class="field-row"><span>Q_QUANTITY</span><strong>25</strong></div>
+            <div class="field-row"><span>Q_THREAD_SPEC</span><strong>M8x1.25-6H</strong></div>
+            <div class="field-row"><span>Q_CERTIFICATE</span><strong>EN10204-3.1</strong></div>
+            <div class="notice spaced-medium">
+              Eine Demo kann mit bereitgestellten Testdateien arbeiten, ohne dass Interessenten eigene Bauteildaten hochladen muessen.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="holydraft-title">
+        <div class="wrap">
+          <div class="section-header">
+            <p class="eyebrow">holydraft</p>
+            <h2 id="holydraft-title">Schnittstellenarbeit aus der Praxis fuer die Praxis.</h2>
+            <p>
+              holydraft initiiert STEP-Q und entwickelt das Oekosystem dahinter: Spezifikation, Anwendungsfaelle,
+              Referenzprozesse, Importer-/Exporter-Konzepte und technische Beratung fuer CAD-, PDM-, ERP- und Plattformintegrationen.
+            </p>
+          </div>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Erfahrung aus manuellen Workflows</h3>
+              <p>Viele Uebergaben funktionieren heute nur, weil Menschen technische Informationen haendisch sortieren, pruefen und uebertragen.</p>
+            </article>
+            <article class="card">
+              <h3>Automatisierung mit Bodenhaftung</h3>
+              <p>STEP-Q soll genau dort strukturieren, wo Daten bereits vorhanden sind, aber noch nicht sauber in Folgeprozessen ankommen.</p>
+            </article>
+            <article class="card">
+              <h3>Vom Kopf ins Produkt</h3>
+              <p>Das Ziel ist weniger Reibung zwischen Idee, Konstruktion, Anfrage, Kalkulation und Fertigung.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <div class="section-header">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Fragen, die STEP-Q beantworten muss.</h2>
+          </div>
+          <div class="faq">
+            <details class="faq-item" open>
+              <summary>Warum braucht es STEP-Q, wenn es bereits STEP AP242 gibt?</summary>
+              <p>
+                AP242 ist stark und umfassend fuer Produktdaten. STEP-Q ersetzt AP242 nicht, sondern ergaenzt STEP-basierte
+                Prozesse gezielt um praxisnahe RFQ-Metadaten: Fertigungsabsicht, anfragerelevante Informationen und Felder fuer
+                Kalkulation, Einkauf, Arbeitsvorbereitung und Plattformprozesse.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Wie vereinheitlicht STEP-Q Materialbezeichnungen?</summary>
+              <p>
+                STEP-Q soll Materialien nicht automatisch erraten. Stattdessen wird eine definierte Bezeichnung bewusst zugeordnet.
+                Interne Materiallogiken koennen ueber Mapping-Tabellen oder Uebersetzungsdatenbanken mit STEP-Q-konformen Daten
+                verbunden werden.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Kann ich mich darauf verlassen, dass mit STEP-Q alle Daten korrekt sind?</summary>
+              <p>
+                Nein. STEP-Q macht bereitgestellte Informationen strukturierter und nachvollziehbarer, ersetzt aber keine fachliche
+                Pruefung. Die Verantwortung fuer richtige, vollstaendige und freigegebene Daten bleibt bei Ersteller, Exporter,
+                Importeur und den jeweiligen Prozessen.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Warum sollte ich den zusaetzlichen Aufwand machen?</summary>
+              <p>
+                Viele STEP-Q-relevante Informationen existieren bereits im CAD-Modell, in Parametern oder internen Systemen. Ein
+                Exporter kann sie auslesen, zur Pruefung anzeigen und strukturiert mitgeben. Dadurch sinken spaeter Rueckfragen,
+                manuelle Uebertragung und Fehlerwahrscheinlichkeit.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Was passiert, wenn sich Werte oder Enumerationen aendern?</summary>
+              <p>
+                STEP-Q ist auf versionierte Weiterentwicklung ausgelegt. Neue Werte koennen ergaenzt werden; Importer koennen ueber
+                Versionen, Mapping- und Alias-Logiken nachvollziehen, nach welcher Spezifikation eine Datei erstellt wurde.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Muessen Anwender Metadaten weiterhin manuell in Formulare eingeben?</summary>
+              <p>
+                Nicht zwingend. Unterstuetzt ein Portal oder ein Anfrageprozess STEP-Q, koennen Felder wie Material, Menge,
+                Verfahren, Oberflaeche oder Fertigungsabsicht aus der Datei uebernommen, geprueft und ergaenzt werden.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Erkennt STEP-Q, wenn wichtige Informationen fehlen?</summary>
+              <p>
+                STEP-Q kann mit Vollstaendigkeitsprofilen arbeiten. Ein Profil legt fest, welche Angaben fuer einen Anwendungsfall
+                benoetigt werden. Fehlende Pflichtinformationen koennen dann sichtbar gemacht oder als unvollstaendig markiert werden.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="responsibility-title">
+        <div class="wrap">
+          <div class="section-header">
+            <p class="eyebrow">Verantwortung</p>
+            <h2 id="responsibility-title">Strukturierte Uebergabe ersetzt keine Freigabe.</h2>
+          </div>
+          <div class="notice">
+            STEP-Q dient der strukturierten Uebertragung und Verarbeitung von technischen und fertigungsrelevanten Informationen.
+            STEP-Q ersetzt keine technische Pruefung, Fertigungsfreigabe, Qualitaetskontrolle oder rechtliche Verantwortung der
+            beteiligten Parteien. Vollstaendigkeit gilt immer bezogen auf ein definiertes Profil oder einen konkreten Anwendungsfall.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h2>STEP-Q gemeinsam weiterentwickeln.</h2>
+          <p class="footer-copy">
+            Sie testen STEP-Q, planen einen Importer oder moechten reale Anfrageprozesse strukturierter gestalten?
+            holydraft freut sich ueber technische Gespraeche und konkrete Pilotfaelle.
+          </p>
+        </div>
+        <div class="actions footer-actions">
+          <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Kontakt">Kontakt aufnehmen</a>
+          <a class="button" href="https://github.com/holydraft/step-q">GitHub Repository</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
+

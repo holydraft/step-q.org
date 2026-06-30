@@ -1,0 +1,36 @@
+:root {
+  --ink: #f3f7fb;
+  --muted: #b7c3ce;
+  --line: #2a3b48;
+  --surface: #101a22;
+  --surface-strong: #1b2a35;
+  --accent: #51d8b7;
+  --accent-dark: #a3f1dd;
+  --signal: #f2b05d;
+  --white: #081015;
+  --lead: #d4dee7;
+  --hero-bg: radial-gradient(circle at 78% 12%, rgba(81, 216, 183, 0.12), transparent 34%), linear-gradient(180deg, #081015 0%, #0f1a22 100%);
+  --header-bg: rgba(8, 16, 21, 0.94);
+  --footer-bg: #05090d;
+  --footer-muted: #b7c3ce;
+  --shadow: 0 24px 90px rgba(0, 0, 0, 0.42);
+  --notice-bg: #251b0f;
+  --notice-text: #f4c98f;
+  --field-line: #253744;
+}
+
+body {
+  background: #081015;
+}
+
+.button {
+  border-color: #597083;
+}
+
+.button.primary {
+  color: #07110e;
+}
+
+.hero-visual img {
+  background: #ffffff;
+}
