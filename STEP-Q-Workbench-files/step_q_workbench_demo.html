@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STEP-Q Workbench Demo</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="../theme-console.css" />
+    <style>
+      body {
+        margin: 0;
+        background: #f6f8fb;
+        color: #16212f;
+      }
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 2rem 1rem 3rem;
+      }
+      .page-card {
+        background: #fff;
+        border: 1px solid #d9e1ea;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+      }
+      .grid {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: 1.05fr 0.95fr;
+      }
+      .panel {
+        border: 1px solid #e3e8ef;
+        border-radius: 12px;
+        padding: 1rem 1rem 1.2rem;
+        background: #fcfdff;
+      }
+      .field-grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+      label {
+        display: grid;
+        gap: 0.3rem;
+        font-weight: 600;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        font: inherit;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.65rem 0.75rem;
+        border: 1px solid #c8d2df;
+        border-radius: 8px;
+        background: #fff;
+      }
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.7rem 1rem;
+        cursor: pointer;
+        background: #0f6cbd;
+        color: white;
+        font-weight: 600;
+      }
+      button.secondary {
+        background: #425466;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .result {
+        margin-top: 1rem;
+        padding: 0.9rem 1rem;
+        border-radius: 10px;
+        background: #f5f8fc;
+        border: 1px solid #dfe7f1;
+      }
+      .error {
+        color: #b42318;
+        font-weight: 700;
+      }
+      .warning {
+        color: #a15b00;
+      }
+      .hint {
+        color: #58667a;
+        font-size: 0.95rem;
+      }
+      .summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 0.7rem 0 0.5rem;
+      }
+      .summary span {
+        background: #eef3f8;
+        border-radius: 999px;
+        padding: 0.35rem 0.7rem;
+      }
+      .message-list {
+        padding-left: 1rem;
+        margin: 0.5rem 0 0;
+      }
+      .message-list li + li {
+        margin-top: 0.25rem;
+      }
+      .hidden {
+        display: none;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="page-card">
+        <header>
+          <p class="eyebrow">Browser-basierte Demo</p>
+          <h1>STEP-Q Workbench im Browser</h1>
+          <p class="lead">
+            Diese Demo überträgt die Funktionalität der Python-Workbench in ein einfaches HTML- und JavaScript-Tool.
+            Ein STEP-File kann geladen, validiert, mit STEP-Q-Metadaten angereichert und anschließend als neue Datei heruntergeladen werden.
+          </p>
+        </header>
+
+        <div class="grid">
+          <section class="panel" aria-labelledby="input-title">
+            <h2 id="input-title">1. STEP-Datei laden</h2>
+            <label>
+              <span>STEP-Datei auswählen</span>
+              <input id="stepFile" type="file" accept=".step,.stp,.STEP,.STP" />
+            </label>
+            <div class="actions">
+              <button id="loadButton" type="button">Datei lesen und prüfen</button>
+              <button id="annotateButton" class="secondary" type="button">Mit Metadaten anreichern</button>
+            </div>
+            <div id="status" class="result hidden"></div>
+          </section>
+
+          <section class="panel" aria-labelledby="metadata-title">
+            <h2 id="metadata-title">2. STEP-Q-Metadaten pflegen</h2>
+            <div class="field-grid" id="metadataFields"></div>
+            <div class="actions">
+              <label style="flex: 1 1 240px;">
+                <span>Ausgabe-Variante</span>
+                <select id="writeMode">
+                  <option value="copy">Als annotierte Kopie herunterladen</option>
+                  <option value="original">Als überarbeitete Datei herunterladen</option>
+                </select>
+              </label>
+              <label style="flex: 1 1 240px;">
+                <span>Copy-Suffix</span>
+                <input id="copySuffix" type="text" value=".annotated" />
+              </label>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="step_q_workbench_demo.js"></script>
+  </body>
+</html>

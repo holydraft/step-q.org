@@ -40,8 +40,9 @@
             </p>
             <div class="actions" aria-label="Hauptaktionen">
               <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Pilotprojekt">Pilotprojekt starten</a>
-              <a class="button" href="https://github.com/holydraft/step-q">STEP-Q Spezifikation ansehen</a>
-              <a class="button" href="#exporter">Importer/Exporter anfragen</a>
+              <a class="button secondary" href="STEP-Q-Workbench-files/step_q_workbench_demo.html">Browser-Workbench testen</a>
+              <a class="button tertiary" href="#exporter">Importer/Exporter anfragen</a>
+              <a class="button quaternary" href="https://github.com/holydraft/step-q">STEP-Q Spezifikation ansehen</a>
             </div>
           </div>
           <figure class="hero-visual">
@@ -71,17 +72,23 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="problem-title">
+      <section class="section band" aria-labelledby="problem-title">
         <div class="wrap">
-          <div class="section-header">
-            <p class="eyebrow">Warum STEP-Q?</p>
-            <h2 id="problem-title">Warum tippen wir Fertigungsdaten noch einmal ab?</h2>
-            <p>
-              In vielen industriellen Prozessen ist die STEP-Datei der zentrale Uebergabepunkt. Die Geometrie ist vorhanden,
-              aber entscheidende Zusatzinformationen liegen in Zeichnungen, PDFs, E-Mails, Excel-Listen, ERP-Systemen oder im
-              Erfahrungswissen einzelner Mitarbeiter.
-            </p>
+          <div class="statement">
+            <div>
+              <p class="eyebrow">Warum STEP-Q?</p>
+              <h2 id="problem-title">STEP-Q ersetzt STEP nicht. STEP-Q macht Anfragekontext maschinenlesbar.</h2>
+            </div>
+            <div>
+              <p>
+                STEP ist ein etablierter Standard fuer CAD-Geometrie und produktbezogene Daten. STEP-Q ergaenzt diesen Austausch
+                um eine kleine, dokumentierte RFQ-Metadatenschicht: Material, Fertigungsabsicht, Mengen, Oberflaechen,
+                Toleranzen, Pruefanforderungen und weitere Informationen, die fuer Kalkulation und technische Uebergabe relevant sind.
+              </p>
+            </div>
           </div>
+        </div>
+        <div class="wrap">
           <div class="grid-4">
             <article class="card">
               <h3>Manuelle Uebertragung</h3>
@@ -103,29 +110,6 @@
         </div>
       </section>
 
-      <section class="section band" id="prinzip" aria-labelledby="principle-title">
-        <div class="wrap">
-          <div class="statement">
-            <div>
-              <p class="eyebrow">Positionierung</p>
-              <h2 id="principle-title">STEP-Q ersetzt STEP nicht. STEP-Q macht Anfragekontext maschinenlesbar.</h2>
-            </div>
-            <div>
-              <p>
-                STEP ist ein etablierter Standard fuer CAD-Geometrie und produktbezogene Daten. STEP-Q ergaenzt diesen Austausch
-                um eine kleine, dokumentierte RFQ-Metadatenschicht: Material, Fertigungsabsicht, Mengen, Oberflaechen,
-                Toleranzen, Pruefanforderungen und weitere Informationen, die fuer Kalkulation und technische Uebergabe relevant sind.
-              </p>
-              <p class="spaced-small">
-                Die Spezifikation ist carrier-agnostisch gedacht: AP203, AP214, AP242 oder Sidecar-basierte Prozesse koennen als
-                Traeger dienen. Die Geometrie bleibt beim jeweiligen STEP-Format; STEP-Q liefert einen klaren Zugriff auf die
-                angebotsrelevanten Metadaten.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="section" aria-labelledby="metadata-title">
         <div class="wrap">
           <div class="section-header">
@@ -137,18 +121,26 @@
             </p>
           </div>
           <div class="grid-3">
-            <ul class="card list" aria-label="Technische STEP-Q-Felder">
-              <li>Material und Halbzeug</li>
-              <li>Fertigungsverfahren</li>
-              <li>Oberflaechen und Nachbehandlungen</li>
-              <li>Toleranzen und Qualitaetsanforderungen</li>
-            </ul>
-            <ul class="card list" aria-label="Anfragebezogene STEP-Q-Felder">
-              <li>Mengen und Losgroessen</li>
-              <li>Anfrage- und Angebotskontext</li>
-              <li>Bauteilfunktion und Fertigungsabsicht</li>
-              <li>Pruef- und Dokumentationsanforderungen</li>
-            </ul>
+            <div class="field-categories">
+              <div>
+                <h3>Technische Felder</h3>
+                <ul class="list">
+                  <li>Material und Halbzeug</li>
+                  <li>Fertigungsverfahren</li>
+                  <li>Oberflaechen und Nachbehandlungen</li>
+                  <li>Toleranzen und Qualitaetsanforderungen</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Anfragebezogene Felder</h3>
+                <ul class="list">
+                  <li>Mengen und Losgroessen</li>
+                  <li>Anfrage- und Angebotskontext</li>
+                  <li>Bauteilfunktion und Fertigungsabsicht</li>
+                  <li>Pruef- und Dokumentationsanforderungen</li>
+                </ul>
+              </div>
+            </div>
             <article class="card">
               <h3>Beispiel Gewinde</h3>
               <p>
@@ -160,30 +152,37 @@
         </div>
       </section>
 
-      <section class="section band" aria-labelledby="workflow-title">
+      <section class="section workflow-section" aria-labelledby="workflow-title">
         <div class="wrap">
-          <div class="section-header">
+          <div class="section-header workflow-header">
             <p class="eyebrow">Wie es funktioniert</p>
-            <h2 id="workflow-title">Einmal strukturiert erfassen, danach besser uebergeben.</h2>
+            <h2 id="workflow-title">Einmal strukturiert erfasst, danach besser uebergeben.</h2>
           </div>
-          <div class="workflow">
+          <div class="workflow-container">
             <article class="workflow-step">
-              <span>01</span>
+              <div class="step-number">01</div>
+              <div class="step-icon">📊</div>
               <h3>Daten erkennen</h3>
               <p>CAD, PDM, ERP oder Plattformen stellen vorhandene Informationen wie Material, Menge oder Prozesskontext bereit.</p>
             </article>
+            <div class="workflow-arrow">→</div>
             <article class="workflow-step">
-              <span>02</span>
+              <div class="step-number">02</div>
+              <div class="step-icon">✓</div>
               <h3>Pruefen</h3>
               <p>Anwender koennen Werte kontrollieren, fehlende Angaben ergaenzen und die Uebergabe bewusst freigeben.</p>
             </article>
+            <div class="workflow-arrow">→</div>
             <article class="workflow-step">
-              <span>03</span>
+              <div class="step-number">03</div>
+              <div class="step-icon">📄</div>
               <h3>Mitgeben</h3>
               <p>STEP-Q-Metadaten reisen strukturiert mit der STEP-Datei oder ueber ein dokumentiertes Sidecar-Profil.</p>
             </article>
+            <div class="workflow-arrow">→</div>
             <article class="workflow-step">
-              <span>04</span>
+              <div class="step-number">04</div>
+              <div class="step-icon">⚙</div>
               <h3>Weiterverarbeiten</h3>
               <p>Importer, Portale und Kalkulationssysteme koennen Felder auslesen, vorbelegen und gezielt Rueckfragen erzeugen.</p>
             </article>
