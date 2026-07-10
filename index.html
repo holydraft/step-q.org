@@ -19,7 +19,7 @@
           <span>STEP-Q</span>
         </a>
         <div class="nav-links">
-          <a href="#prinzip">Prinzip</a>
+          <a href="#metadata-title">Prinzip</a>
           <a href="#partner">Partner</a>
           <a href="#faq">FAQ</a>
           <a href="https://github.com/holydraft/step-q">Spezifikation</a>
@@ -110,7 +110,7 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="metadata-title">
+      <section class="section" id="prinzip" aria-labelledby="metadata-title">
         <div class="wrap">
           <div class="section-header">
             <p class="eyebrow">Was wird strukturiert?</p>
@@ -154,39 +154,12 @@
 
       <section class="section workflow-section" aria-labelledby="workflow-title">
         <div class="wrap">
-          <div class="section-header workflow-header">
-            <p class="eyebrow">Wie es funktioniert</p>
-            <h2 id="workflow-title">Einmal strukturiert erfasst, danach besser uebergeben.</h2>
-          </div>
-          <div class="workflow-container">
-            <article class="workflow-step">
-              <div class="step-number">01</div>
-              <div class="step-icon">📊</div>
-              <h3>Daten erkennen</h3>
-              <p>CAD, PDM, ERP oder Plattformen stellen vorhandene Informationen wie Material, Menge oder Prozesskontext bereit.</p>
-            </article>
-            <div class="workflow-arrow">→</div>
-            <article class="workflow-step">
-              <div class="step-number">02</div>
-              <div class="step-icon">✓</div>
-              <h3>Pruefen</h3>
-              <p>Anwender koennen Werte kontrollieren, fehlende Angaben ergaenzen und die Uebergabe bewusst freigeben.</p>
-            </article>
-            <div class="workflow-arrow">→</div>
-            <article class="workflow-step">
-              <div class="step-number">03</div>
-              <div class="step-icon">📄</div>
-              <h3>Mitgeben</h3>
-              <p>STEP-Q-Metadaten reisen strukturiert mit der STEP-Datei oder ueber ein dokumentiertes Sidecar-Profil.</p>
-            </article>
-            <div class="workflow-arrow">→</div>
-            <article class="workflow-step">
-              <div class="step-number">04</div>
-              <div class="step-icon">⚙</div>
-              <h3>Weiterverarbeiten</h3>
-              <p>Importer, Portale und Kalkulationssysteme koennen Felder auslesen, vorbelegen und gezielt Rueckfragen erzeugen.</p>
-            </article>
-          </div>
+          <figure class="workflow-image-panel">
+            <img
+              src="732653a6-ed96-4d46-a66b-ec698f8f69a9.png"
+              alt="Workflow-Visualisierung fuer STEP-Q von Datenerkennung bis Weiterverarbeitung"
+            />
+          </figure>
         </div>
       </section>
 
@@ -219,11 +192,11 @@
             </article>
           </div>
           <div class="partner-strip" aria-label="Partnerlogo Platzhalter">
-            <span>Pilotpartner</span>
-            <span>Kompatible Systeme</span>
-            <span>Referenzprozesse</span>
+            <a href="mailto:manuel@holydraft.com?subject=STEP-Q%20Pilotpartner">Pilotpartner</a>
+            <a href="#exporter">Kompatible Systeme</a>
+            <a href="#holydraft">Referenzprozesse</a>
           </div>
-          <div class="actions">
+          <div class="actions partner-actions">
             <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Entwicklungspartner">Entwicklungspartner werden</a>
             <a class="button" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Technischer%20Austausch">Technischen Austausch anfragen</a>
           </div>
@@ -242,10 +215,13 @@
             </p>
             <div class="tag-row" aria-label="Geplante und erste Systembeispiele">
               <span class="tag">SolidWorks Exporter</span>
-              <span class="tag">OS</span>
+              <span class="tag">OrderSpot</span>
               <span class="tag">Messersoft</span>
               <span class="tag">Kalkulationssysteme</span>
               <span class="tag">Plattform-Importer</span>
+              <span class="tag is-empty" aria-hidden="true"></span>
+              <span class="tag is-empty" aria-hidden="true"></span>
+              <span class="tag is-empty" aria-hidden="true"></span>
             </div>
             <div class="actions">
               <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Importer%20Exporter">Importer/Exporter anfragen</a>
@@ -253,12 +229,15 @@
             </div>
           </div>
           <div class="mockup" aria-label="Vorschau einer STEP-Q Metadatenmaske">
-            <div class="mockup-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             <div class="field-row"><span>Q_MATERIAL</span><strong>EN AW-6082</strong></div>
             <div class="field-row"><span>Q_PRIMARY_PROCESS</span><strong>milling</strong></div>
             <div class="field-row"><span>Q_QUANTITY</span><strong>25</strong></div>
             <div class="field-row"><span>Q_THREAD_SPEC</span><strong>M8x1.25-6H</strong></div>
             <div class="field-row"><span>Q_CERTIFICATE</span><strong>EN10204-3.1</strong></div>
+            <div class="field-row"><span>Q_SURFACE_FINISH</span><strong>Ra 1.6</strong></div>
+            <div class="field-row"><span>Q_TOLERANCE_CLASS</span><strong>ISO 2768-mK</strong></div>
+            <div class="field-row"><span>Q_DELIVERY_WINDOW</span><strong>14 Tage</strong></div>
+            <div class="field-row"><span>Q_PART_FUNCTION</span><strong>Tragender Halter</strong></div>
             <div class="notice spaced-medium">
               Eine Demo kann mit bereitgestellten Testdateien arbeiten, ohne dass Interessenten eigene Bauteildaten hochladen muessen.
             </div>
@@ -363,7 +342,7 @@
             <p class="eyebrow">Verantwortung</p>
             <h2 id="responsibility-title">Strukturierte Uebergabe ersetzt keine Freigabe.</h2>
           </div>
-          <div class="notice">
+          <div class="notice notice-soft">
             STEP-Q dient der strukturierten Uebertragung und Verarbeitung von technischen und fertigungsrelevanten Informationen.
             STEP-Q ersetzt keine technische Pruefung, Fertigungsfreigabe, Qualitaetskontrolle oder rechtliche Verantwortung der
             beteiligten Parteien. Vollstaendigkeit gilt immer bezogen auf ein definiertes Profil oder einen konkreten Anwendungsfall.
@@ -375,6 +354,7 @@
     <footer class="footer">
       <div class="wrap footer-grid">
         <div>
+          <p class="eyebrow">Zusammenarbeit</p>
           <h2>STEP-Q gemeinsam weiterentwickeln.</h2>
           <p class="footer-copy">
             Sie testen STEP-Q, planen einen Importer oder moechten reale Anfrageprozesse strukturierter gestalten?
@@ -383,7 +363,6 @@
         </div>
         <div class="actions footer-actions">
           <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Kontakt">Kontakt aufnehmen</a>
-          <a class="button" href="https://github.com/holydraft/step-q">GitHub Repository</a>
         </div>
       </div>
     </footer>
