@@ -1,7 +1,7 @@
 :root {
   --ink: #f3f7fb;
   --muted: #b7c3ce;
-  --line: #2a3b48;
+  --line: #4a8f7c;
   --surface: #101a22;
   --surface-strong: #1b2a35;
   --accent: #51d8b7;
@@ -14,9 +14,11 @@
   --footer-bg: #05090d;
   --footer-muted: #b7c3ce;
   --shadow: 0 24px 90px rgba(0, 0, 0, 0.42);
-  --notice-bg: #251b0f;
-  --notice-text: #f4c98f;
+  --notice-bg: #0a2723;
+  --notice-text: #a3f1dd;
   --field-line: #253744;
+  --section-alt-a: #07111a;
+  --section-alt-b: #0b1a25;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 }
 
 .button {
-  border-color: #597083;
+  border-color: var(--line);
 }
 
 .button.primary {
@@ -33,4 +35,38 @@ body {
 
 .hero-visual img {
   background: #ffffff;
+}
+
+.workflow-image-panel {
+  border-color: var(--line);
+  background: #040d16;
+}
+
+.partner-strip a {
+  color: #081510;
+  background: #1f7a5c;
+  border-color: var(--line);
+}
+
+.partner-strip a:hover {
+  background: #2a8d6b;
+  border-color: var(--accent);
+}
+
+.partner-actions .button.primary {
+  border-color: #4fb48e;
+  background: #67c7a3;
+  color: #0e3126;
+}
+
+.partner-actions .button:not(.primary) {
+  border-color: #b8e5d2;
+  background: #e6f6ef;
+  color: #1a4d3f;
+}
+
+.tag {
+  background: #0f2a38;
+  color: #d8fff2;
+  border-color: var(--line);
 }
