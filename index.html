@@ -10,6 +10,9 @@
     <title>STEP-Q | RFQ-Metadaten fuer STEP-basierte Fertigungsanfragen</title>
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="theme-console.css" />
+    <script defer src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script defer src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script defer src="logo-viewer.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -45,12 +48,12 @@
               <a class="button quaternary" href="https://github.com/holydraft/step-q">STEP-Q Spezifikation ansehen</a>
             </div>
           </div>
-          <figure class="hero-visual">
-            <img
-              src="STEP-Q.png"
-              alt="Technische Darstellung eines STEP-Bauteils mit integrierten STEP-Q-Informationen"
-            />
-          </figure>
+          <div
+            id="logoViewer"
+            class="hero-visual logo-viewer-host"
+            role="img"
+            aria-label="Interaktiver LOGO 3D-Viewer fuer STEP-Q"
+          ></div>
         </div>
         <div class="wrap trust-strip" aria-label="STEP-Q Vertrauenssignale">
           <div>

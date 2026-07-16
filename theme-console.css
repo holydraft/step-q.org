@@ -19,6 +19,9 @@
   --field-line: #253744;
   --section-alt-a: #07111a;
   --section-alt-b: #0b1a25;
+  --viewer-bg-a: #0f1a22;
+  --viewer-bg-b: #182936;
+  --viewer-bg-c: #203747;
 }
 
 body {
@@ -31,10 +34,6 @@ body {
 
 .button.primary {
   color: #07110e;
-}
-
-.hero-visual img {
-  background: #ffffff;
 }
 
 .workflow-image-panel {
