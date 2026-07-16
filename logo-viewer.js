@@ -40,7 +40,7 @@ const ANIMATION_HOLD_MS = 1500;
 const ANIMATION_TRANSITION_MS = 1500;
 const ANIMATION_RETURN_MS = 700;
 const ANIMATION_WHEEL_RELEASE_MS = 240;
-const DEFAULT_PANNING_SENSIBILITY = 420;
+const DEFAULT_PANNING_SENSIBILITY = 50000;
 
 function mountLogoViewer(hostElement, options = {}) {
   if (!hostElement || !window.BABYLON) return null;

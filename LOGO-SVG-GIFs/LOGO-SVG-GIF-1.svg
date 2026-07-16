@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="206mm"
+   height="95.533997mm"
+   viewBox="0 0 206 95.533997"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="LOGO-SVG-GIF-1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.01"
+     inkscape:cx="527.22772"
+     inkscape:cy="141.08911"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="967"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g52" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="matrix(0.1800768,0,0,0.18007686,-14.944805,-17.038248)"
+       id="g40">
+      <g
+         transform="translate(-2.4468113,26)"
+         id="g57">
+        <g
+           id="g54">
+          <g
+             id="g53">
+            <g
+               id="g52" />
+          </g>
+        </g>
+        <text
+           fill="#69bc9f"
+           font-family="'Agency FB', 'Agency FB_MSFontService', sans-serif"
+           font-weight="700"
+           font-stretch="condensed"
+           font-size="319px"
+           transform="translate(88.0791,458)"
+           id="text54">ST</text>
+        <text
+           fill="#013e3c"
+           font-family="'Agency FB', 'Agency FB_MSFontService', sans-serif"
+           font-weight="700"
+           font-stretch="condensed"
+           font-size="319px"
+           transform="translate(374.079,458)"
+           id="text55">E</text>
+        <text
+           fill="#69bc9f"
+           font-family="'Agency FB', 'Agency FB_MSFontService', sans-serif"
+           font-weight="700"
+           font-stretch="condensed"
+           font-size="319px"
+           transform="translate(507.912,458)"
+           id="text56">P</text>
+      </g>
+    </g>
+  </g>
+</svg>

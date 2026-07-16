@@ -61,28 +61,24 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 70px;
+  min-height: 84px;
   gap: 24px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
+  padding: 8px 0;
   font-weight: 760;
   text-decoration: none;
   letter-spacing: 0;
 }
 
-.brand-mark {
-  width: 36px;
-  height: 36px;
-  border: 2px solid var(--accent);
-  display: grid;
-  place-items: center;
-  font-size: 0.78rem;
-  color: var(--accent-dark);
-  background: var(--surface);
+.brand-logo-animation {
+  display: block;
+  width: clamp(150px, 16vw, 215px);
+  height: auto;
 }
 
 .nav-links {
@@ -121,7 +117,7 @@ main > section.section:nth-of-type(even) {
 
 .hero {
   background: var(--hero-bg);
-  padding: 68px 0;
+  padding: 44px 0 68px;
 }
 
 .wrap {
@@ -135,10 +131,11 @@ main > section.section:nth-of-type(even) {
 }
 
 .hero-grid {
+  --hero-gap: clamp(28px, 4vw, 64px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, calc((100% - var(--hero-gap)) / 2)));
   justify-content: space-between;
-  gap: clamp(28px, 4vw, 64px);
+  gap: var(--hero-gap);
   align-items: stretch;
 }
 
@@ -265,28 +262,31 @@ p {
   justify-self: end;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--line);
-  background: var(--white);
+  border: 0;
+  background: transparent;
   padding: 0;
-  box-shadow: var(--shadow);
+  box-shadow: none;
+  outline: 0;
 }
 
 .logo-viewer-host {
-  height: min(46vh, 430px);
-  min-height: 330px;
+  align-self: stretch;
+  height: min(78vh, 620px);
+  min-height: 420px;
   overflow: hidden;
-  background:
-    radial-gradient(130% 90% at 12% 8%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 42%, rgba(255, 255, 255, 0) 70%),
-    linear-gradient(145deg, var(--viewer-bg-a, #101a22) 0%, var(--viewer-bg-b, #1b2a35) 56%, var(--viewer-bg-c, #253744) 100%);
+  background: transparent;
+  outline: 0;
 }
 
 .logo-viewer-canvas {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border: 0;
   display: block;
   touch-action: none;
   background: transparent;
+  box-shadow: none;
+  outline: 0;
 }
 
 .viewer-load-error::after {
@@ -372,7 +372,8 @@ p {
 .field-categories {
   display: grid;
   gap: 30px;
-  grid-template-columns: 1fr;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .field-categories div {
@@ -392,43 +393,6 @@ p {
 
 .role-grid .card {
   min-height: 210px;
-}
-
-.partner-strip {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 20px;
-  width: 100%;
-}
-
-.partner-strip a {
-  min-height: 42px;
-  min-width: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  color: #081510;
-  background: #1f7a5c;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
-}
-
-.partner-strip a:hover {
-  transform: translateY(-1px);
-  border-color: var(--accent);
-  background: #2a8d6b;
-  box-shadow: 0 10px 24px rgba(10, 24, 38, 0.18);
-}
-
-.partner-strip a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 .partner-actions .button.primary {
@@ -460,6 +424,28 @@ p {
 .statement p:not(.eyebrow),
 .faq-item p {
   color: var(--muted);
+}
+
+.thread-example-card {
+  grid-column: 1 / -1;
+  overflow: hidden;
+}
+
+.thread-example-card p {
+  max-width: 720px;
+}
+
+.thread-example-media {
+  margin: 18px 0 0;
+  border: 1px solid var(--field-line, var(--line));
+  background: #06131f;
+  overflow: hidden;
+}
+
+.thread-example-media img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .statement {
@@ -625,7 +611,13 @@ p {
 .mockup {
   border: 1px solid var(--line);
   background: var(--white);
-  padding: 16px;
+  padding: 16px 16px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview .actions {
+  margin-bottom: 0;
 }
 
 .mockup-top {
@@ -716,6 +708,76 @@ details.faq-item p {
   border-top: 0;
 }
 
+.workbench-playground {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 200px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: var(--notice-bg);
+  overflow: hidden;
+  cursor: none;
+}
+
+.workbench-chase-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  min-width: 176px;
+  min-height: 68px;
+  padding: 10px 22px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--surface) 74%, var(--accent) 26%);
+  color: var(--notice-text);
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+  transition: left 320ms ease, top 320ms ease, transform 140ms ease, background-color 160ms ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.workbench-playground.is-ready .workbench-chase-button {
+  pointer-events: auto;
+  transition: left 180ms ease-out, top 180ms ease-out, transform 140ms ease, background-color 160ms ease;
+}
+
+.workbench-chase-button:hover,
+.workbench-chase-button:focus-visible {
+  background: color-mix(in srgb, var(--surface) 52%, var(--accent) 48%);
+}
+
+.workbench-cursor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.workbench-playground.is-active .workbench-cursor {
+  opacity: 1 !important;
+}
+
+.workbench-playground.is-pressing .workbench-cursor {
+  transform: translate(-50%, -50%) scale(1.32);
+}
+
 .notice-soft {
   border-top: 0;
 }
@@ -777,7 +839,15 @@ details.faq-item p {
   }
 
   .hero-visual {
+    justify-self: center;
     margin-top: 32px;
+    max-width: 560px;
+  }
+
+  .logo-viewer-host {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    min-height: 0;
   }
 
   .nav {
@@ -800,15 +870,22 @@ details.faq-item p {
   .workflow,
   .preview,
   .statement,
-  .partner-strip,
   .trust-strip,
   .footer-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-visual {
-    justify-self: start;
-    max-width: 520px;
+    justify-self: center;
+  }
+
+  .thread-example-card {
+    grid-column: auto;
+  }
+
+  .field-categories {
+    grid-column: auto;
+    grid-template-columns: 1fr;
   }
 
   .workflow-container {
@@ -824,7 +901,7 @@ details.faq-item p {
 @media (max-width: 620px) {
   .section,
   .hero {
-    padding: 58px 0;
+    padding: 40px 0 58px;
   }
 
   .card,
@@ -833,6 +910,14 @@ details.faq-item p {
   .faq-item,
   .mockup {
     padding: 18px;
+  }
+
+  .mockup {
+    padding-bottom: 0;
+  }
+
+  .workbench-playground {
+    min-height: 180px;
   }
 
   summary {

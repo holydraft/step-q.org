@@ -41,17 +41,6 @@ body {
   background: #040d16;
 }
 
-.partner-strip a {
-  color: #081510;
-  background: #1f7a5c;
-  border-color: var(--line);
-}
-
-.partner-strip a:hover {
-  background: #2a8d6b;
-  border-color: var(--accent);
-}
-
 .partner-actions .button.primary {
   border-color: #4fb48e;
   background: #67c7a3;
