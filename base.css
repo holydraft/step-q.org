@@ -179,6 +179,18 @@ p {
   margin: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .lead {
   margin-top: 18px;
   max-width: 720px;
@@ -432,7 +444,7 @@ p {
 }
 
 .thread-example-card p {
-  max-width: 720px;
+  max-width: none;
 }
 
 .thread-example-media {
@@ -525,7 +537,7 @@ p {
 .workflow-image-panel {
   margin: 0;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   background: #06131f;
   box-shadow: 0 22px 58px rgba(0, 0, 0, 0.34);

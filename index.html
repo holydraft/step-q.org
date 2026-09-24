@@ -49,8 +49,8 @@
               und Systeme dieselben Anfragegrundlagen verstehen.
             </p>
             <div class="actions" aria-label="Hauptaktionen">
-              <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Pilotprojekt">Pilotprojekt starten</a>
-              <a class="button secondary" href="https://holydraft.github.io/step-q/tools/step_q_form.html" target="_blank">Browser-Workbench testen</a>
+              <a class="button primary" href="mailto:manuel@holydraft.com?subject=STEP-Q%20Pilotprojekt?body=test">Pilotprojekt starten</a>
+              <a class="button secondary" href="https://holydraft.github.io/step-q/tools/step_q_form.html" target="_blank" rel="noopener">Browser-Workbench testen</a>
               <a class="button tertiary" href="#exporter">Importer/Exporter anfragen</a>
               <a class="button quaternary" href="https://github.com/holydraft/step-q">STEP-Q Spezifikation ansehen</a>
             </div>
@@ -152,13 +152,14 @@
               </div>
             </div>
             <article class="card thread-example-card">
-              <h3>Beispiel Gewinde</h3>
+              <h3>Beispiel Entgraten</h3>
               <p>
-                Eine Bohrung kann geometrisch sichtbar sein. Für Angebot und Fertigung ist aber relevant, welches Gewinde
-                vorgesehen ist und wie tief es sein soll.
+                Neben vielen Methoden zum Entgraten von Teilen ist das Nassschliffverfahren sehr gängig. Hierbei muss immer
+                entschieden werden, ob nur eine oder beide Seiten entgratet werden sollen. Das Fehlen dieser Angabe führt zu
+                unnötigen Rückfragen. STEP-Q kann diese Angabe maschinenlesbar mitliefern.
               </p>
               <figure class="thread-example-media">
-                <img src="Gewindebeispiel.png" alt="Beispiel für Gewindeangabe in STEP-Q" />
+                <img src="entgraten_bearbeitung.png" alt="Beispiel für Entgratungsangaben in STEP-Q" loading="lazy" decoding="async" />
               </figure>
             </article>
           </div>
@@ -167,10 +168,13 @@
 
       <section class="section workflow-section" aria-labelledby="workflow-title">
         <div class="wrap">
+          <h2 id="workflow-title" class="visually-hidden">Wie es funktioniert</h2>
           <figure class="workflow-image-panel">
             <img
-              src="732653a6-ed96-4d46-a66b-ec698f8f69a9.png"
+              src="stepq-how-it-works.png"
               alt="Workflow-Visualisierung für STEP-Q von Datenerkennung bis Weiterverarbeitung"
+              loading="lazy"
+              decoding="async"
             />
           </figure>
         </div>
