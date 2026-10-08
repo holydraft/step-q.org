@@ -8,9 +8,11 @@
       content="STEP-Q ergänzt STEP-basierte CAD-Daten um strukturierte RFQ-Metadaten für Anfrage, Kalkulation, Arbeitsvorbereitung und Fertigung."
     />
     <title>STEP-Q | RFQ-Metadaten für STEP-basierte Fertigungsanfragen</title>
-    <link rel="icon" href="LOGO.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/brand/LOGO.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="theme-console.css" />
+    <link rel="stylesheet" href="styles/wie-es-funktioniert.css" />
+    <link rel="stylesheet" href="styles/entgraten.css" />
     <script defer src="https://cdn.babylonjs.com/babylon.js"></script>
     <script defer src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script defer src="logo-viewer.js"></script>
@@ -24,7 +26,7 @@
           <img
             id="brandLogoAnimation"
             class="brand-logo-animation"
-            src="LOGO-SVG-GIFs/LOGO-SVG-GIF-1.svg"
+            src="assets/brand/LOGO-SVG-GIFs/LOGO-SVG-GIF-1.svg"
             alt="STEP-Q"
           />
         </a>
@@ -151,32 +153,138 @@
                 </ul>
               </div>
             </div>
-            <article class="card thread-example-card">
-              <h3>Beispiel Entgraten</h3>
-              <p>
-                Neben vielen Methoden zum Entgraten von Teilen ist das Nassschliffverfahren sehr gängig. Hierbei muss immer
-                entschieden werden, ob nur eine oder beide Seiten entgratet werden sollen. Das Fehlen dieser Angabe führt zu
-                unnötigen Rückfragen. STEP-Q kann diese Angabe maschinenlesbar mitliefern.
-              </p>
-              <figure class="thread-example-media">
-                <img src="entgraten_bearbeitung.png" alt="Beispiel für Entgratungsangaben in STEP-Q" loading="lazy" decoding="async" />
-              </figure>
-            </article>
+          </div>
+        </div>
+        <div class="deburr-intro" aria-labelledby="deburr-example-title">
+          <div class="wrap">
+            <h3 id="deburr-example-title">Beispiel Entgraten</h3>
+            <p>
+              Neben vielen Methoden zum Entgraten von Teilen ist das Nassschliffverfahren sehr gängig. Hierbei muss immer
+              entschieden werden, ob nur eine oder beide Seiten entgratet werden sollen. Das Fehlen dieser Angabe führt zu
+              unnötigen Rückfragen. STEP-Q kann diese Angabe maschinenlesbar mitliefern.
+            </p>
           </div>
         </div>
       </section>
 
-      <section class="section workflow-section" aria-labelledby="workflow-title">
-        <div class="wrap">
-          <h2 id="workflow-title" class="visually-hidden">Wie es funktioniert</h2>
-          <figure class="workflow-image-panel">
-            <img
-              src="stepq-how-it-works.png"
-              alt="Workflow-Visualisierung für STEP-Q von Datenerkennung bis Weiterverarbeitung"
-              loading="lazy"
-              decoding="async"
-            />
+      <section class="deburr" aria-labelledby="deburr-heading">
+        <div class="deburr__layout">
+          <figure class="deburr__part">
+            <img src="assets/images/entgraten-bauteil.png" alt="Metallbauteil mit Bohrungen und einer markierten Schnittkante" width="480" height="480">
+            <figcaption>Kante</figcaption>
           </figure>
+
+          <section class="deburr__details">
+            <h2 class="deburr__heading" id="deburr-heading">Entgratangabe &amp; Hinweise</h2>
+            <div class="deburr__details-grid">
+              <table class="deburr__table" aria-label="Eigenschaften des Entgratens">
+                <tbody>
+                  <tr><th scope="row">Bear&shy;bei&shy;tung</th><td>Entgraten</td></tr>
+                  <tr><th scope="row">Optionen</th><td>R&uuml;ckseitig / Zweiseitig</td></tr>
+                  <tr><th scope="row">Ziel</th><td>Gratfreie Kanten</td></tr>
+                  <tr><th scope="row">Geeignet f&uuml;r</th><td>Laserteile und Blechteile</td></tr>
+                  <tr><th scope="row">Kanten&shy;wirkung</th><td>Kanten werden gratfrei, bleiben aber meist scharfkantig.</td></tr>
+                  <tr><th scope="row">Oberfl&auml;chen&shy;hinweis</th><td>Die Oberfl&auml;che kann sich durch maschinelles Entgraten ver&auml;ndern.</td></tr>
+                  <tr><th scope="row">Auswahl relevant</th><td>Ja, f&uuml;r Angebot und Fertigung</td></tr>
+                </tbody>
+              </table>
+              <ul class="deburr__notes">
+                <li><span class="deburr__note-number" aria-hidden="true">01</span><p>Entgraten entfernt erh&ouml;hte Kanten (Grat), die durch Laserschneiden entstehen k&ouml;nnen.</p></li>
+                <li><span class="deburr__note-number" aria-hidden="true">02</span><p>Die Kanten werden gratfrei, bleiben jedoch meist scharfkantig.</p></li>
+                <li><span class="deburr__note-number" aria-hidden="true">03</span><p>Durch maschinelles Entgraten kann sich die Oberfl&auml;che ver&auml;ndern.</p></li>
+                <li><span class="deburr__note-number" aria-hidden="true">04</span><p>F&uuml;r Angebot und Fertigung ist die Wahl der Entgratart relevant.</p></li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="deburr__comparison" aria-labelledby="deburr-comparison-heading">
+            <h2 id="deburr-comparison-heading">Entgratoptionen im Vergleich</h2>
+            <div class="deburr__diagrams">
+              <figure class="deburr__diagram">
+                <h3>R&uuml;ckseitig</h3>
+                <p class="deburr__face-label">Vorderseite<br><span>(nicht entgratet)</span></p>
+                <div class="deburr__cross-section" role="img" aria-label="Blechquerschnitt: nur die R&uuml;ckseite ist entgratet. t bezeichnet die Materialst&auml;rke.">
+                  <div class="deburr__metal"><span class="deburr__edge deburr__edge--bottom"></span></div>
+                  <span class="deburr__thickness" aria-hidden="true"><span>t</span></span>
+                </div>
+                <figcaption class="deburr__face-label deburr__face-label--bottom">R&uuml;ckseite<br><span>(entgratet)</span></figcaption>
+              </figure>
+              <figure class="deburr__diagram">
+                <h3>Zweiseitig</h3>
+                <p class="deburr__face-label">Vorderseite<br><span>(entgratet)</span></p>
+                <div class="deburr__cross-section" role="img" aria-label="Blechquerschnitt: Vorder- und R&uuml;ckseite sind entgratet. t bezeichnet die Materialst&auml;rke.">
+                  <div class="deburr__metal"><span class="deburr__edge deburr__edge--top"></span><span class="deburr__edge deburr__edge--bottom"></span></div>
+                  <span class="deburr__thickness" aria-hidden="true"><span>t</span></span>
+                </div>
+                <figcaption class="deburr__face-label deburr__face-label--bottom">R&uuml;ckseite<br><span>(entgratet)</span></figcaption>
+              </figure>
+            </div>
+            <p class="deburr__legend"><span>t</span> = Materialst&auml;rke</p>
+          </section>
+
+          <section class="deburr__explanation" aria-labelledby="deburr-options-heading">
+            <h2 id="deburr-options-heading">Optionenerkl&auml;rung</h2>
+            <dl class="deburr__options">
+              <div><dt>R&uuml;ckseitig</dt><dd>Entgratung nur auf einer Seite / R&uuml;ckseite</dd></div>
+              <div><dt>Zweiseitig</dt><dd>Entgratung auf Vorder- und R&uuml;ckseite</dd></div>
+            </dl>
+            <div class="deburr__photos">
+              <figure><figcaption>Nicht entgratet</figcaption><img src="assets/images/entgraten-vorher.png" alt="Schnittkante mit sichtbar aufstehendem Grat" width="299" height="158"></figure>
+              <figure><figcaption>Entgratet</figcaption><img src="assets/images/entgraten-nachher.png" alt="Bearbeitete Metallkante ohne sichtbaren Grat" width="278" height="158"></figure>
+            </div>
+            <p class="deburr__summary">Entgraten entfernt erh&ouml;hte Kanten (Grat) und macht sie gratfrei, jedoch meist scharfkantig.</p>
+          </section>
+
+          <figure class="deburr__symbol">
+            <img src="assets/images/entgraten-symbol.png" alt="Symbol einer Metallkante mit hervorgehobener bearbeiteter Fl&auml;che" width="315" height="345">
+          </figure>
+        </div>
+      </section>
+
+      <section class="step-q-process" aria-labelledby="step-q-heading">
+        <div class="step-q-process__inner">
+          <header class="step-q-process__header">
+            <p class="step-q-process__eyebrow">Wie es funktioniert</p>
+            <h2 id="step-q-heading">Einmal strukturiert erfassen,<br class="step-q-process__break"> danach besser &uuml;bergeben.</h2>
+          </header>
+
+          <ol class="step-q-process__steps">
+            <li class="step-q-process__step">
+              <span class="step-q-process__number" aria-hidden="true">01</span>
+              <div class="step-q-process__illustration">
+                <img src="assets/images/daten-erkennen.png" alt="" width="1254" height="1254" decoding="async">
+              </div>
+              <h3>Daten erkennen</h3>
+              <p>CAD, PDM, ERP oder Plattformen stellen vorhandene Informationen wie Material, Menge oder Prozesskontext bereit.</p>
+              <span class="step-q-process__connector" aria-hidden="true"><span></span></span>
+            </li>
+            <li class="step-q-process__step">
+              <span class="step-q-process__number" aria-hidden="true">02</span>
+              <div class="step-q-process__illustration">
+                <img src="assets/images/pruefen.png" alt="" width="1254" height="1254" decoding="async">
+              </div>
+              <h3>Pr&uuml;fen</h3>
+              <p>Anwender k&ouml;nnen Werte kontrollieren, fehlende Angaben erg&auml;nzen und die &Uuml;bergabe bewusst freigeben.</p>
+              <span class="step-q-process__connector" aria-hidden="true"><span></span></span>
+            </li>
+            <li class="step-q-process__step">
+              <span class="step-q-process__number" aria-hidden="true">03</span>
+              <div class="step-q-process__illustration">
+                <img src="assets/images/mitgeben.png" alt="" width="1254" height="1254" decoding="async">
+              </div>
+              <h3>Mitgeben</h3>
+              <p>STEP-Q-Metadaten reisen strukturiert mit der STEP-Datei oder &uuml;ber ein dokumentiertes Sidecar-Profil.</p>
+              <span class="step-q-process__connector" aria-hidden="true"><span></span></span>
+            </li>
+            <li class="step-q-process__step">
+              <span class="step-q-process__number" aria-hidden="true">04</span>
+              <div class="step-q-process__illustration">
+                <img src="assets/images/weiterverarbeiten.png" alt="" width="1254" height="1254" decoding="async">
+              </div>
+              <h3>Weiterverarbeiten</h3>
+              <p>Importer, Portale und Kalkulationssysteme k&ouml;nnen diese Daten mappen und zu ihren Zwecken weiterverarbeiten.</p>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -256,7 +364,7 @@
             <div class="field-row"><span>Q_DELIVERY_WINDOW</span><strong>14 Tage</strong></div>
             <div class="field-row"><span>Q_PART_FUNCTION</span><strong>Tragender Halter</strong></div>
             <div class="workbench-playground" data-workbench-playground>
-              <img class="workbench-cursor" src="LOGO.svg" alt="" aria-hidden="true" />
+              <img class="workbench-cursor" src="assets/brand/LOGO.svg" alt="" aria-hidden="true" />
               <a
                 class="workbench-chase-button"
                 href="https://holydraft.github.io/step-q/tools/step_q_form.html"

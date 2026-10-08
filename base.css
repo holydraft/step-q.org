@@ -348,6 +348,23 @@ p {
   font-size: 1.08rem;
 }
 
+.deburr-intro {
+  margin-top: 48px;
+  margin-bottom: -28px;
+  padding: 22px 0;
+  background: var(--section-alt-a);
+}
+
+.deburr-intro h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.deburr-intro p {
+  max-width: none;
+  color: var(--lead, var(--muted));
+}
+
 .section-header .eyebrow,
 .hero-copy .eyebrow {
   margin: 0 0 18px;

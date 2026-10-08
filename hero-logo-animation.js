@@ -1,9 +1,9 @@
 const HERO_LOGO_FRAMES = [
-  "LOGO-SVG-GIFs/LOGO-SVG-GIF-1.svg",
-  "LOGO-SVG-GIFs/LOGO-SVG-GIF-2.svg",
-  "LOGO-SVG-GIFs/LOGO-SVG-GIF-3.svg",
-  "LOGO-SVG-GIFs/LOGO-SVG-GIF-4.svg",
-  "LOGO-SVG-GIFs/LOGO-SVG-GIF-5.svg"
+  "assets/brand/LOGO-SVG-GIFs/LOGO-SVG-GIF-1.svg",
+  "assets/brand/LOGO-SVG-GIFs/LOGO-SVG-GIF-2.svg",
+  "assets/brand/LOGO-SVG-GIFs/LOGO-SVG-GIF-3.svg",
+  "assets/brand/LOGO-SVG-GIFs/LOGO-SVG-GIF-4.svg",
+  "assets/brand/LOGO-SVG-GIFs/LOGO-SVG-GIF-5.svg"
 ];
 
 const HERO_LOGO_FRAME_MS = 550;
