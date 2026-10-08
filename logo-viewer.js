@@ -1,7 +1,7 @@
 const STATIC_VIEWS = [
   {
     name: "1",
-    model: "LOGO.glb",
+    model: "assets/brand/LOGO.glb",
     createdAt: "2026-07-16T09:52:11.001Z",
     camera: {
       alpha: 1.570796,
@@ -12,7 +12,7 @@ const STATIC_VIEWS = [
   },
   {
     name: "2",
-    model: "LOGO.glb",
+    model: "assets/brand/LOGO.glb",
     createdAt: "2026-07-16T10:01:40.533Z",
     camera: {
       alpha: 2.581645,
@@ -45,7 +45,7 @@ const DEFAULT_PANNING_SENSIBILITY = 50000;
 function mountLogoViewer(hostElement, options = {}) {
   if (!hostElement || !window.BABYLON) return null;
 
-  const modelUrl = options.modelUrl || "LOGO.glb";
+  const modelUrl = options.modelUrl || "assets/brand/LOGO.glb";
   const canvas = document.createElement("canvas");
   canvas.className = "logo-viewer-canvas";
   hostElement.appendChild(canvas);
@@ -377,5 +377,5 @@ function mountLogoViewer(hostElement, options = {}) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  mountLogoViewer(document.getElementById("logoViewer"), { modelUrl: "LOGO.glb" });
+  mountLogoViewer(document.getElementById("logoViewer"), { modelUrl: "assets/brand/LOGO.glb" });
 });
