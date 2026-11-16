@@ -86,15 +86,15 @@
 
 .deburr__explanation { grid-column: 1 / 3; }
 .deburr__explanation h2 { margin-bottom: 14px; }
-.deburr__options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 680px; margin: 0 0 22px; text-align: center; }
+.deburr__options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 0 0 22px; text-align: center; }
 .deburr__options > div { min-width: 0; }
-.deburr__options > div + div { border-left: 1px solid var(--db-border); padding-left: 24px; }
-.deburr__options dt { display: inline-block; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1px solid var(--db-accent); font-size: 21px; }
-.deburr__options dd { margin: 0; font-size: 16px; text-wrap: balance; }
-.deburr__photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 680px; }
-.deburr__photos figcaption { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-.deburr__photos img { width: 100%; aspect-ratio: 1.85; object-fit: cover; }
-.deburr__summary { font-size: 15px; padding-top: 18px; max-width: 900px; }
+.deburr__options dt { display: inline-block; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1px solid var(--db-accent); font-size: 24px; }
+.deburr__options dd { margin: 0; font-size: 18px; text-wrap: balance; }
+.deburr__photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.deburr__photos figure { min-width: 0; }
+.deburr__photos figcaption { padding-bottom: 8px; font-size: 17px; font-weight: 600; }
+.deburr__photos img { width: 100%; height: auto; }
+.deburr__summary { font-size: 17px; padding-top: 18px; }
 .deburr__symbol { display: grid; place-items: center; padding: 24px; background: #000c14; }
 .deburr__symbol img { width: 100%; max-width: 280px; height: auto; }
 
@@ -133,17 +133,15 @@
   .deburr__notes li { padding-block: 16px; }
   .deburr__comparison h2 { text-align: center; }
   .deburr__diagrams { gap: 18px; }
-  .deburr h3, .deburr__options dt { font-size: 19px; }
+  .deburr h3, .deburr__options dt { font-size: 21px; }
   .deburr__photos, .deburr__options { gap: 16px; }
-  .deburr__options > div + div { padding-left: 16px; }
-  .deburr__options dd { font-size: 15px; }
+  .deburr__options dd { font-size: 17px; }
   .deburr__symbol img { max-width: 220px; }
 }
 
 @container deburr (max-width: 380px) {
   .deburr__details, .deburr__comparison, .deburr__explanation { padding-inline: 16px; }
   .deburr__photos, .deburr__options { grid-template-columns: minmax(0, 1fr); }
-  .deburr__options > div + div { padding-left: 0; border-left: 0; }
   .deburr__diagrams { gap: 12px; }
   .deburr__cross-section { height: 100px; grid-template-columns: minmax(0, 1fr) 18px; gap: 6px; }
   .deburr__face-label { font-size: 12px; }

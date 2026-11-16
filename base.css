@@ -98,6 +98,27 @@ a {
   color: var(--accent-dark);
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 2px;
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.language-switch a[aria-current="page"] {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.language-switch a:not([aria-current="page"]) {
+  color: var(--muted);
+}
+
 main {
   overflow: hidden;
 }
@@ -740,23 +761,28 @@ details.faq-item p {
 .workbench-playground {
   position: relative;
   flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
   min-height: 200px;
   margin-top: 16px;
   margin-bottom: 16px;
+  padding: 20px;
   border-radius: 8px;
   background: var(--notice-bg);
   overflow: hidden;
-  cursor: none;
 }
 
-.workbench-chase-button {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+.workbench-action {
+  position: relative;
   z-index: 2;
-  min-width: 176px;
+  flex: 0 1 172px;
+  min-width: 136px;
+  max-width: 172px;
   min-height: 68px;
-  padding: 10px 22px;
+  margin-left: auto;
+  padding: 10px 18px;
   border: 1px solid var(--accent);
   border-radius: 999px;
   display: inline-flex;
@@ -769,42 +795,63 @@ details.faq-item p {
   line-height: 1.15;
   text-align: center;
   text-decoration: none;
-  transform: translate(-50%, -50%);
-  transition: left 320ms ease, top 320ms ease, transform 140ms ease, background-color 160ms ease;
-  pointer-events: none;
-  white-space: nowrap;
+  transition: transform 160ms ease, background-color 160ms ease;
 }
 
-.workbench-playground.is-ready .workbench-chase-button {
-  pointer-events: auto;
-  transition: left 180ms ease-out, top 180ms ease-out, transform 140ms ease, background-color 160ms ease;
-}
-
-.workbench-chase-button:hover,
-.workbench-chase-button:focus-visible {
+.workbench-action:hover,
+.workbench-action:focus-visible {
   background: color-mix(in srgb, var(--surface) 52%, var(--accent) 48%);
+  transform: translateY(-2px);
 }
 
-.workbench-cursor {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 3;
-  width: 150px;
-  height: 150px;
+.workbench-action:focus-visible {
+  outline: 3px solid var(--accent-dark);
+  outline-offset: 3px;
+}
+
+.workbench-logo {
+  flex: 0 1 112px;
+  width: 28%;
+  min-width: 72px;
+  max-width: 112px;
+  height: auto;
   object-fit: contain;
-  opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, -50%) scale(1);
-  transition: opacity 120ms ease, transform 120ms ease;
+  opacity: 0.72;
 }
 
-.workbench-playground.is-active .workbench-cursor {
-  opacity: 1 !important;
+.mockup.is-flowing .field-row strong {
+  animation: workbench-data-flow 520ms ease both;
 }
 
-.workbench-playground.is-pressing .workbench-cursor {
-  transform: translate(-50%, -50%) scale(1.32);
+.mockup.is-flowing .field-row:nth-child(1) strong { animation-delay: 0ms; }
+.mockup.is-flowing .field-row:nth-child(2) strong { animation-delay: 55ms; }
+.mockup.is-flowing .field-row:nth-child(3) strong { animation-delay: 110ms; }
+.mockup.is-flowing .field-row:nth-child(4) strong { animation-delay: 165ms; }
+.mockup.is-flowing .field-row:nth-child(5) strong { animation-delay: 220ms; }
+.mockup.is-flowing .field-row:nth-child(6) strong { animation-delay: 275ms; }
+.mockup.is-flowing .field-row:nth-child(7) strong { animation-delay: 330ms; }
+.mockup.is-flowing .field-row:nth-child(8) strong { animation-delay: 385ms; }
+.mockup.is-flowing .field-row:nth-child(9) strong { animation-delay: 440ms; }
+
+.mockup.is-flowing .workbench-logo {
+  animation: workbench-logo-pulse 800ms ease 600ms both;
+}
+
+@keyframes workbench-data-flow {
+  0% { opacity: 0.55; transform: translateX(-4px); color: var(--muted); }
+  65% { opacity: 1; transform: translateX(3px); color: var(--accent); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes workbench-logo-pulse {
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workbench-action { transition: none; }
+  .mockup.is-flowing .field-row strong,
+  .mockup.is-flowing .workbench-logo { animation: none; }
 }
 
 .notice-soft {
@@ -947,6 +994,7 @@ details.faq-item p {
 
   .workbench-playground {
     min-height: 180px;
+    padding: 12px;
   }
 
   summary {
